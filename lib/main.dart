@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blueAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/',
+      initialRoute: '/settings',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.generateRoute,
     );
