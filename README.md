@@ -2,8 +2,8 @@
 
 OTP or One Time Password is a common feature in a mobile app. This repo will hold a clean architecture for the OTP flow with unit tests.
 
-Framework - Flutter
-Language - Dart
+- Framework - Flutter
+- Language - Dart
 
 # Flow Chart:
 ![image](https://user-images.githubusercontent.com/14884575/94113161-d114d700-fe89-11ea-8d9f-d5184b2e8019.png)
