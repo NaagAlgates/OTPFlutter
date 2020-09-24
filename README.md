@@ -1,16 +1,17 @@
-# xam_otp_flutter
+# XAM OTP
 
-A new Flutter project.
+OTP or One Time Password is a common feature in a mobile app. This repo will holds the OTP feature using Flutter. 
 
-## Getting Started
+# Flow Chart:
+![image](https://user-images.githubusercontent.com/14884575/94113161-d114d700-fe89-11ea-8d9f-d5184b2e8019.png)
+- [Download Flowchart Image](https://app.lucidchart.com/documents/view/0702f2df-b048-4d00-b753-c0d592e93ae8)
+- [Download Flowchart Pdf](https://app.lucidchart.com/publicSegments/view/47d5ad93-cde1-4227-a3b5-0b6108e08bfc)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Credits
+- [flutter_bloc](https://pub.dev/packages/flutter_bloc)
+- [Country Code API - Rest Countries](https://restcountries.eu)
+- [Mock API - Mocky](https://run.mocky.io)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributor
+- [Nagaraj Alagusundaram](https://www.nagaraj.com.au)
