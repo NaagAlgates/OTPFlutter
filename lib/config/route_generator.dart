@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:xam_otp_flutter/pages/home_page.dart';
+import 'package:xam_otp_flutter/pages/otp_page.dart';
+import 'package:xam_otp_flutter/pages/success_page.dart';
 
 import '../pages/broken_page.dart';
 import '../main.dart';
@@ -16,6 +19,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => SettingsPage());
       case '/no_network':
         return MaterialPageRoute(builder: (_) => NoNetwork());
+      case '/home':
+        return MaterialPageRoute(builder: (_) => HomePage());
+      case '/otp':
+        return MaterialPageRoute(builder: (_) => OtpPage());
+      case '/success':
+        return MaterialPageRoute(builder: (_) => OtpSuccessPage());
       default:
         return MaterialPageRoute(builder: (_) => Broken());
     }
