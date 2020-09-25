@@ -27,10 +27,10 @@ void main() {
         final response = MockOtpResponse();
         when(response.statusCode).thenReturn(500);
         when(httpClient.get(
-                'https://run.mocky.io/v3/b6b09314-4f0f-42e6-90d7-f014bef8dbcf'))
+                'https://run.mocky.io/v3/83b30968-118f-4b61-a90c-12211bd106fc'))
             .thenAnswer((realInvocation) => Future.value(response));
         try {
-          await otpApiClient.getOtp(OtpDigits.Four);
+          await otpApiClient.getOtp();
           fail('should throw exception 500');
         } catch (error) {
           expect(error.toString(), 'Exception: error getting otpData. Response code: 500');
@@ -43,9 +43,9 @@ void main() {
         when(response.statusCode).thenReturn(200);
         when(response.body).thenReturn(json);
         when(httpClient.get(
-            'https://run.mocky.io/v3/b6b09314-4f0f-42e6-90d7-f014bef8dbcf'))
+            'https://run.mocky.io/v3/83b30968-118f-4b61-a90c-12211bd106fc'))
             .thenAnswer((realInvocation) => Future.value(response));
-          final optData = await otpApiClient.getOtp(OtpDigits.Four);
+          final optData = await otpApiClient.getOtp();
         expect(optData.otp,'1234');
       });
     });

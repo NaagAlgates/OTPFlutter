@@ -14,25 +14,16 @@ enum OtpDigits{
 class OtpApiClient{
   static const baseURl = 'https://run.mocky.io';
   static const apiVersion = 'v3';
+  static const endpoint="83b30968-118f-4b61-a90c-12211bd106fc";
   final http.Client httpClient;
 
   OtpApiClient({@required this.httpClient}):assert(httpClient!=null);
 
-  Future<OtpModel> getOtp(OtpDigits digit) async{
-    var endpoint="";
-    switch(digit){
-      case OtpDigits.Four: endpoint= "b6b09314-4f0f-42e6-90d7-f014bef8dbcf";
-      break;
-      case OtpDigits.Five: endpoint= "ff881c80-7cd1-4867-af9f-f982903ae9a2";
-      break;
-      case OtpDigits.Six: endpoint= "83b30968-118f-4b61-a90c-12211bd106fc";
-      break;
-      default: endpoint= "b6b09314-4f0f-42e6-90d7-f014bef8dbcf";
-      break;
-    }
+  Future<OtpModel> getOtp() async{
     final otpUrl = '$baseURl/$apiVersion/$endpoint';
     final otpResponse = await this.httpClient.get(otpUrl);
-
+    if(otpResponse==null)
+      throw NullThrownError();
     if(otpResponse.statusCode!=200)
       throw Exception('error getting otpData. Response code: ${otpResponse.statusCode}');
 

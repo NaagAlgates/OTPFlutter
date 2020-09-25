@@ -7,8 +7,8 @@ class OtpRepository{
 
   OtpRepository({@required this.otpApiClient}): assert(otpApiClient!=null);
 
-  Future<OtpModel> getOtp(OtpDigits digits) async{
-    final response = await otpApiClient.getOtp(digits);
+  Future<OtpModel> getOtp(String str) async{
+    final response = await otpApiClient.getOtp();
     return response;
   }
 }
