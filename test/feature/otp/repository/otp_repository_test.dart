@@ -31,9 +31,9 @@ void main() {
 
     group('getOtp', () {
       test('throws exception when response failure', () async {
-        when(repository.getOtp("")).thenThrow('Error');
+        when(repository.getOtp()).thenThrow('Error');
         try {
-          await repository.getOtp("");
+          await repository.getOtp();
           throw ('should throw error');
         } catch (error) {
           expect(error, 'Error');
@@ -42,7 +42,7 @@ void main() {
       test('otp 4 digit succeed',() async{
         final expected = MockOtp();
         when(httpClient.getOtp()).thenAnswer((realInvocation) => Future.value(expected));
-        final actual = await repository.getOtp("");
+        final actual = await repository.getOtp();
         expect(actual, expected);
       });
     });

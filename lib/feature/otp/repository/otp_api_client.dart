@@ -5,12 +5,6 @@ import 'package:meta/meta.dart';
 import 'package:http/http.dart' as http;
 import 'package:xam_otp_flutter/feature/otp/model/otp_model.dart';
 
-enum OtpDigits{
-  Four,
-  Five,
-  Six
-}
-
 class OtpApiClient{
   static const baseURl = 'https://run.mocky.io';
   static const apiVersion = 'v3';
