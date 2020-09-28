@@ -4,7 +4,6 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:http/http.dart' as http;
 import 'package:xam_otp_flutter/feature/otp/model/country_code_model_entity.dart';
-import 'package:xam_otp_flutter/generated/json/base/json_convert_content.dart';
 
 class CountryApiClient{
   static const baseURl = 'https://restcountries.eu';
@@ -22,6 +21,6 @@ class CountryApiClient{
       throw Exception('error getting otpData. Response code: ${countryResponse.statusCode}');
 
     final countryDataJson = jsonDecode(countryResponse.body);
-    return JsonConvert.fromJsonAsT(countryDataJson);
+    return CountryCodeModelEntity.fromJson(countryDataJson);
   }
 }
