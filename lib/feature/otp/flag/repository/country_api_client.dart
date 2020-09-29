@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:meta/meta.dart';
 import 'package:http/http.dart' as http;
-import 'package:xam_otp_flutter/feature/otp/model/country_code_model_entity.dart';
+import 'package:xam_otp_flutter/feature/otp/flag/model/country_code_model_entity.dart';
 
 class CountryApiClient{
   static const baseURl = 'https://restcountries.eu';
