@@ -5,10 +5,9 @@ abstract class FlagState extends Equatable {
 }
 
 class FlagFetchInitial extends FlagState {
-  final flagUrl;
-  FlagFetchInitial(this.flagUrl);
+  FlagFetchInitial();
   @override
-  List<Object> get props => [flagUrl];
+  List<Object> get props => [];
 }
 
 class FlagFetchSuccess extends FlagState {
@@ -19,10 +18,9 @@ class FlagFetchSuccess extends FlagState {
 }
 
 class FlagFetchFailed extends FlagState {
-  final flagUrl;
-  FlagFetchFailed(this.flagUrl);
+  FlagFetchFailed();
   @override
-  List<Object> get props => [flagUrl];
+  List<Object> get props => [];
 }
 
 class FlagLoading extends FlagState {
