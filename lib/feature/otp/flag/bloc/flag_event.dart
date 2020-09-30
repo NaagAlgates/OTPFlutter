@@ -4,8 +4,8 @@ abstract class FlagEvent extends Equatable {
 }
 
 class FetchFlag extends FlagEvent{
-  final countryCode;
-  FetchFlag(this.countryCode);
+  final int countryCode;
+  FetchFlag({@required this.countryCode}): assert(countryCode>0);
   @override
   List<Object> get props => [countryCode];
 }

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:xam_otp_flutter/feature/otp/bloc/otp_bloc.dart';
 import 'package:xam_otp_flutter/feature/otp/flag/model/country_code_model_entity.dart';
 import 'package:xam_otp_flutter/feature/otp/flag/repository/country_repository.dart';
+import 'package:xam_otp_flutter/utilities/check_network.dart';
 
 part 'flag_event.dart';
 
@@ -22,17 +23,26 @@ class FlagBloc extends Bloc<FlagEvent, FlagState> {
   Stream<FlagState> mapEventToState(
     FlagEvent event,
   ) async* {
-    yield FlagLoading();
     if (event is FetchFlag) {
-      _loadFlag(event.countryCode);
+      yield* _loadFlag(event.countryCode);
     }
   }
 
-  _loadFlag(countryCode) async* {
-    final countryFlag = await countryRepository.fetchCountryData(countryCode);
-    if(countryFlag!=null) {
-      yield FlagFetchSuccess(countryFlag.flag);
-    }else
-      yield FlagFetchFailed();
+  Stream<FlagState> _loadFlag(countryCode) async* {
+    yield FlagLoading();
+    try {
+      var isConnected = NetworkAnalyzer.getInstance();
+
+      if (isConnected.hasConnection) {
+            final countryData = await countryRepository.fetchCountryData(countryCode);
+            if (countryData != null) {
+              yield FlagFetchSuccess(flagUrl: countryData.flag);
+            } else
+              yield FlagFetchFailed();
+           } else
+             yield NoInternet();
+    } catch (e) {
+      yield FlagFetchException();
+    }
   }
 }

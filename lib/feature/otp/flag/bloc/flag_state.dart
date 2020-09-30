@@ -12,13 +12,19 @@ class FlagFetchInitial extends FlagState {
 
 class FlagFetchSuccess extends FlagState {
   final flagUrl;
-  FlagFetchSuccess(this.flagUrl);
+  FlagFetchSuccess({this.flagUrl});
   @override
   List<Object> get props => [flagUrl];
 }
 
 class FlagFetchFailed extends FlagState {
   FlagFetchFailed();
+  @override
+  List<Object> get props => [];
+}
+
+class FlagFetchException extends FlagState {
+  FlagFetchException();
   @override
   List<Object> get props => [];
 }
